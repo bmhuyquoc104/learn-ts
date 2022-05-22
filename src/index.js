@@ -43,3 +43,25 @@ var user1 = {
     isHired: false,
     languages: ["JS", "TS"]
 };
+// Functions
+var addNumber = function (x, y) { return x + y; };
+console.log(addNumber(1, 2));
+var log = function (message) { return console.log(message); };
+var employee = {
+    name: "huy",
+    age: 12,
+    id: 2
+};
+var plus = function (x, y) { return x + y; };
+var dive = function (x, y) { return x / y; };
+var showMessage = function (name, message) {
+    return "This is ".concat(name, ". ").concat(message, " assignment");
+};
+console.log(showMessage("huy", "I have to do"));
+// Type assertion
+var cid;
+var customerId = cid;
+var customerId2 = cid;
+cid = "12";
+customerId = 12;
+customerId2 = "12";

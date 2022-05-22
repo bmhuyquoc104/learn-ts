@@ -53,5 +53,52 @@ const user1: User = {
   name: "Huy",
   age: 22,
   isHired: false,
-  languages: ["JS","TS"],
+  languages: ["JS", "TS"],
 };
+
+// Functions
+const addNumber = (x: number, y: number): number => x + y;
+console.log(addNumber(1, 2));
+
+const log = (message: number | string): void => console.log(message);
+
+//  interface
+interface Employee {
+  name: string;
+  age: number;
+  // Use question mark to make the key become optional
+  hobbies?: string[];
+  //  Read only property => not allow to re assign
+  readonly id: number;
+}
+
+const employee: Employee = {
+  name: "huy",
+  age: 12,
+  id: 2,
+};
+interface MathFunction {
+  (x: number, y: number): number;
+}
+
+const plus: MathFunction = (x: number, y: number): number => x + y;
+const dive: MathFunction = (x: number, y: number): number => x / y;
+
+// interface function
+interface introduce {
+  (name: string, message: string): string;
+}
+
+const showMessage: introduce = (name: string, message: string): string =>
+  `This is ${name}. ${message} assignment`;
+
+console.log(showMessage("huy", "I have to do"));
+
+// Type assertion
+let cid: any;
+let customerId = cid as number;
+let customerId2 = <string>cid;
+cid = "12";
+customerId = 12;
+customerId2 = "12";
+
