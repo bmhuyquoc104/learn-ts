@@ -176,6 +176,7 @@ const getArr2 = <T>(items: T[]): T[] => {
   return new Array().concat(items);
 };
 
+dfdsfs
 const numArr2 = getArr2<number>([1,2,3]);
 const strArr2 = getArr2<string>(["ngoc", "anh"]);
 numArr2.push(5);
