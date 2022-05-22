@@ -13,9 +13,10 @@ type ProfileProps = {
     street: string;
     city: string;
   };
+  status: React.ReactNode
 };
 
-function Profile({ name, age, skills, address, isLoggedIn }: ProfileProps) {
+function Profile({ name, age, skills, address, isLoggedIn,status }: ProfileProps) {
   return (
     <div>
       {isLoggedIn ? (
@@ -32,6 +33,7 @@ function Profile({ name, age, skills, address, isLoggedIn }: ProfileProps) {
           <h2>
             Address: {address.street}, {address.city}{" "}
           </h2>
+          <h2>{status}</h2>
         </div>
       ) : (
         <h1> Welcome guest</h1>
