@@ -2,6 +2,9 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
 import Status from "./components/Status";
+import Button from "./components/Button";
+import Input from "./components/Input";
+
 function App() {
   const address = {
     street: "Nguyen Tuan Street",
@@ -35,6 +38,8 @@ function App() {
         address={address}
         skills={skills}
       />
+      <Button handleClick={(e) => console.log("huy ne")} />
+      <Input handleChange={(e) =>console.log(e.target.value)} />
       {/* <Status status="married" /> */}
     </div>
   );
