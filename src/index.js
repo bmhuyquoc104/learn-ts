@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // Basic types
 var id = 5;
 var firstName = "huy";
@@ -65,3 +80,58 @@ var customerId2 = cid;
 cid = "12";
 customerId = 12;
 customerId2 = "12";
+// Class
+var Student = /** @class */ (function () {
+    function Student(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    Student.prototype.introduce = function () {
+        return "My name is ".concat(this.name, " ");
+    };
+    return Student;
+}());
+var studentA = new Student("12", "huy");
+studentA.introduce();
+// implement class
+var Teacher = /** @class */ (function () {
+    function Teacher(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    Teacher.prototype.showSalary = function () {
+        return "".concat(this.name, " received ").concat(this.salary, "$ monthly");
+    };
+    return Teacher;
+}());
+var teacher3 = new Teacher("huy", 1000);
+teacher3.showSalary();
+// Extended class
+var SchoolEmployee = /** @class */ (function (_super) {
+    __extends(SchoolEmployee, _super);
+    function SchoolEmployee(position, experience, id, name, salary) {
+        var _this = _super.call(this, name, salary) || this;
+        _this.experience = experience;
+        _this.id = id;
+        _this.position = position;
+        return _this;
+    }
+    return SchoolEmployee;
+}(Teacher));
+var teacherEmployee = new SchoolEmployee("teacher", 5, 123, "huy", 100);
+console.log(teacherEmployee.showSalary());
+// generics
+function getArr(items) {
+    return new Array().concat(items);
+}
+var numArr = getArr([1, 2, 3, 4]);
+var strArr = getArr(["huy", "ngoc", "anh"]);
+numArr.push(5);
+strArr.push("21");
+var getArr2 = function (items) {
+    return new Array().concat(items);
+};
+var numArr2 = getArr2([1, 2, 3]);
+var strArr2 = getArr2(["ngoc", "anh"]);
+numArr2.push(5);
+strArr2.pop();

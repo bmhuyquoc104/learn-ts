@@ -102,3 +102,81 @@ cid = "12";
 customerId = 12;
 customerId2 = "12";
 
+// Class
+class Student {
+  id: string | number;
+  name: string;
+  constructor(id: string, name: string) {
+    this.id = id;
+    this.name = name;
+  }
+  introduce() {
+    return `My name is ${this.name} `;
+  }
+}
+
+const studentA = new Student("12", "huy");
+studentA.introduce();
+
+interface TeacherInterface {
+  name: string;
+  salary: number;
+  showSalary(): string;
+}
+
+// implement class
+class Teacher implements TeacherInterface {
+  name: string;
+  salary: number;
+  constructor(name: string, salary: number) {
+    this.name = name;
+    this.salary = salary;
+  }
+  showSalary() {
+    return `${this.name} received ${this.salary}$ monthly`;
+  }
+}
+
+const teacher3 = new Teacher("huy", 1000);
+teacher3.showSalary();
+
+// Extended class
+class SchoolEmployee extends Teacher {
+  experience: number;
+  id: string | number;
+  position: string;
+  constructor(
+    position: string,
+    experience: number,
+    id: string | number,
+    name: string,
+    salary: number
+  ) {
+    super(name, salary);
+    this.experience = experience;
+    this.id = id;
+    this.position = position;
+  }
+}
+const teacherEmployee = new SchoolEmployee("teacher", 5, 123, "huy", 100);
+
+console.log(teacherEmployee.showSalary());
+
+// generics
+function getArr<T>(items: T[]): T[] {
+  return new Array().concat(items);
+}
+
+let numArr = getArr<number>([1, 2, 3, 4]);
+let strArr = getArr<string>(["huy", "ngoc", "anh"]);
+numArr.push(5);
+strArr.push("21");
+
+const getArr2 = <T>(items: T[]): T[] => {
+  return new Array().concat(items);
+};
+
+const numArr2 = getArr2<number>([1,2,3]);
+const strArr2 = getArr2<string>(["ngoc", "anh"]);
+numArr2.push(5);
+strArr2.pop();
