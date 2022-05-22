@@ -29,17 +29,18 @@ function App() {
   ];
   return (
     <div className="App">
-      {/* <Header name = "huy" age = {21}/> */}
+      {/* <Header styles={{ color: "red" }} name="huy" age={21} /> */}
       <Profile
         status={<Status status="single" />}
         name="huy"
         age={21}
         isLoggedIn={true}
+        style = {{textAlign: "center",color:"red"}}
         address={address}
         skills={skills}
       />
       <Button handleClick={(e) => console.log("huy ne")} />
-      <Input handleChange={(e) =>console.log(e.target.value)} />
+      <Input handleChange={(e) => console.log(e.target.value)} />
       {/* <Status status="married" /> */}
     </div>
   );

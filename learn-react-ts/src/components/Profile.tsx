@@ -13,15 +13,16 @@ type ProfileProps = {
     street: string;
     city: string;
   };
-  status: React.ReactNode
+  status: React.ReactNode;
+  style: React.CSSProperties;
 };
 
-function Profile({ name, age, skills, address, isLoggedIn,status }: ProfileProps) {
+function Profile({ name, age, skills, address, isLoggedIn,status,style }: ProfileProps) {
   return (
     <div>
       {isLoggedIn ? (
         <div>
-          <h1>Welcome {name} </h1>
+          <h1 style ={style}>Welcome {name} </h1>
           <h2>Age:{age}</h2>
           {skills.map((skill) => (
             <ul key={skill.id}>
