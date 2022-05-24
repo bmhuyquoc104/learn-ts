@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
+import Counter from "./components/state/Counter";
 import Status from "./components/Status";
 import Button from "./components/Button";
 import Input from "./components/Input";
@@ -34,7 +35,7 @@ function App() {
   return (
     <div className="App">
       {/* <Header styles={{ color: "red" }} name="huy" age={21} /> */}
-      <Profile
+      {/* <Profile
         status={<Status status="single" />}
         name="huy"
         age={21}
@@ -45,8 +46,9 @@ function App() {
       />
       <Button handleClick={(e) => console.log("huy ne")} />
       <Input handleChange={(e) => console.log(e.target.value)} />
-      <User name={user.name} age={user.age} />
+      <User name={user.name} age={user.age} /> */}
       {/* <Status status="married" /> */}
+      <Counter />
     </div>
   );
 }
