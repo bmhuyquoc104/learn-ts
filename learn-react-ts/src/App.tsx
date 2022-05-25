@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import Profile from "./components/Profile";
+// import Profile from "./components/Profile";
 import Counter from "./components/state/Counter";
 import Status from "./components/Status";
 import { UseContextProvider } from "./components/context/UserContext";
@@ -9,6 +9,8 @@ import User from "./components/context/User";
 import Employee from "./components/context/Employee";
 import Button from "./components/Button";
 import Input from "./components/Input";
+import Profile from "./components/Component Prop/Profile";
+import Home from "./components/Component Prop/Home";
 
 // import User from "./components/state/User";
 function App() {
@@ -59,6 +61,7 @@ function App() {
       <EmployeeProvider>
         <Employee />
       </EmployeeProvider>
+      <Home isLoggedIn={true} component={Profile} />
     </div>
   );
 }
