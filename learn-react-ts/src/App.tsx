@@ -4,9 +4,12 @@ import Profile from "./components/Profile";
 import Counter from "./components/state/Counter";
 import Status from "./components/Status";
 import { UseContextProvider } from "./components/context/UserContext";
-import User  from "./components/context/User";
+import { EmployeeProvider } from "./components/context/EmployeeContext";
+import User from "./components/context/User";
+import Employee from "./components/context/Employee";
 import Button from "./components/Button";
 import Input from "./components/Input";
+
 // import User from "./components/state/User";
 function App() {
   const address = {
@@ -53,6 +56,9 @@ function App() {
       <UseContextProvider>
         <User />
       </UseContextProvider>
+      <EmployeeProvider>
+        <Employee />
+      </EmployeeProvider>
     </div>
   );
 }
