@@ -3,9 +3,11 @@ import Header from "./components/Header";
 import Profile from "./components/Profile";
 import Counter from "./components/state/Counter";
 import Status from "./components/Status";
+import { UseContextProvider } from "./components/context/UserContext";
+import User  from "./components/context/User";
 import Button from "./components/Button";
 import Input from "./components/Input";
-import User from "./components/state/User";
+// import User from "./components/state/User";
 function App() {
   const address = {
     street: "Nguyen Tuan Street",
@@ -48,7 +50,9 @@ function App() {
       <Input handleChange={(e) => console.log(e.target.value)} />
       <User name={user.name} age={user.age} /> */}
       {/* <Status status="married" /> */}
-      <Counter />
+      <UseContextProvider>
+        <User />
+      </UseContextProvider>
     </div>
   );
 }
