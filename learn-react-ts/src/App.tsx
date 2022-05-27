@@ -10,6 +10,7 @@ import Employee from "./components/context/Employee";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import Profile from "./components/Component Prop/Profile";
+import List from "./components/generic/List";
 import Home from "./components/Component Prop/Home";
 
 // import User from "./components/state/User";
@@ -27,16 +28,19 @@ function App() {
       frontend: "React",
       backend: "NodeJS",
       id: 1,
+      name:"Huy",
     },
     {
       frontend: "React",
       backend: "Spring",
       id: 2,
+      name:"kenRick",
     },
     {
       frontend: "PHP",
       backend: "Lavarel",
       id: 3,
+      name: "Huy2"
     },
   ];
   return (
@@ -62,6 +66,7 @@ function App() {
         <Employee />
       </EmployeeProvider>
       <Home isLoggedIn={true} component={Profile} />
+      <List items = {skills} />
     </div>
   );
 }
