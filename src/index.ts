@@ -176,7 +176,51 @@ const getArr2 = <T>(items: T[]): T[] => {
   return new Array().concat(items);
 };
 
-const numArr2 = getArr2<number>([1,2,3]);
+const numArr2 = getArr2<number>([1, 2, 3]);
 const strArr2 = getArr2<string>(["ngoc", "anh"]);
 numArr2.push(5);
 strArr2.pop();
+
+// Recap generic
+
+const last = <T>(arr: T[]): T => {
+  return arr[arr.length - 1];
+};
+
+const l = last(["huy", "ngoc", "anh"]);
+const l2 = last([true, false, false, false]);
+
+// Make arr
+const makeArr = <X, Y>(x: X, y: Y): [X, Y] => {
+  return [x, y];
+};
+
+const x = makeArr("huy", "ngoc");
+const y = makeArr<string, boolean>("le", true);
+
+// Extends
+
+const makeFullName = <T extends { firstName: string; lastName: string }>(
+  obj: T
+) => {
+  return {
+    ...obj,
+    fullName: obj.lastName + obj.firstName,
+  };
+};
+
+const leAnhSir = makeFullName({
+  firstName: "Sir",
+  lastName:"Le Anh",
+  age: 22,
+});
+
+console.log(leAnhSir);
+
+// type and interface with generics
+interface Props<T>{
+  data: T,
+  name: string,
+}
+
+type NumberProps = Props<string>;

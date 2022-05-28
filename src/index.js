@@ -13,6 +13,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 // Basic types
 var id = 5;
 var firstName = "huy";
@@ -135,3 +146,25 @@ var numArr2 = getArr2([1, 2, 3]);
 var strArr2 = getArr2(["ngoc", "anh"]);
 numArr2.push(5);
 strArr2.pop();
+// Recap generic
+var last = function (arr) {
+    return arr[arr.length - 1];
+};
+var l = last(["huy", "ngoc", "anh"]);
+var l2 = last([true, false, false, false]);
+// Make arr
+var makeArr = function (x, y) {
+    return [x, y];
+};
+var x = makeArr("huy", "ngoc");
+var y = makeArr("le", true);
+// Extends
+var makeFullName = function (obj) {
+    return __assign(__assign({}, obj), { fullName: obj.lastName + obj.firstName });
+};
+var leAnhSir = makeFullName({
+    firstName: "Sir",
+    lastName: "Le Anh",
+    age: 22
+});
+console.log(leAnhSir);
